@@ -17,10 +17,16 @@ Copilot is supported in:
 - [ ] Python file
 
 
-# How to run this project?
+### How to run this project?
 
 ```bash
 pip install poetry  # If you don't already have poetry 
 poetry install
 poetry run main.py
+```
+
+### How to run tests?
+```bash
+poetry install
+poetry run pytest
 ```
