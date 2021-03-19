@@ -1,5 +1,7 @@
 from kivymd.app import MDApp
+
 from app.components import Root
+
 
 class Copylot(MDApp):
     def build(self):
@@ -8,3 +10,4 @@ class Copylot(MDApp):
         self.theme_cls.accent_palette = 'Red'
         self.theme_cls.accent_hue = 'A700'
         self.theme_cls.theme_style = 'Dark'
+        return Root()
