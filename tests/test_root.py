@@ -12,4 +12,4 @@ class BoxGraphicUnitTest(GraphicUnitTest):
 
 class TestRoot(BoxGraphicUnitTest):
     def test_copylot_label_render(self):
-        self.app.ids.first_label.text == 'Copylot'
+        assert self.app.ids.first_label.text == 'Copylot'
