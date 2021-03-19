@@ -3,8 +3,8 @@ Your copilot to studies and work (Pomodoro-timer, Translate and Notes app)
 
 
 Copylot are three applications in one:
-- [x] Pomodoro
-- [x] Tradutor
+- [ ] Pomodoro
+- [ ] Tradutor
 - [ ] Notes
 
 
