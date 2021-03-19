@@ -322,7 +322,6 @@ docs = ["sphinx", "sphinx-autoapi", "sphinx-rtd-theme", "sphinx-notfound-page"]
 [package.source]
 type = "url"
 url = "https://github.com/kivymd/KivyMD/archive/b70abb5.zip"
-
 [[package]]
 name = "mypy-extensions"
 version = "0.4.3"
