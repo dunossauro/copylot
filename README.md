@@ -4,7 +4,7 @@ Your copilot to studies and work (Pomodoro-timer, Translate and Notes app)
 
 Copylot are three applications in one:
 - [ ] Pomodoro
-- [ ] Tradutor
+- [ ] Translate
 - [ ] Notes
 
 
@@ -27,6 +27,21 @@ poetry run main.py
 
 ### How to run tests?
 ```bash
-poetry install
 poetry run pytest
+```
+
+### How to build android app?
+
+To create debug app (ARM version)
+
+```bash
+poetry run buildozer debug
+```
+
+this command will create a `Copylot-0.1-armeabi-v7a-debug.apk` on `bin` path.
+
+If you want dolpy this app in your android phone you can use:
+
+```bash
+poetry run buildozer deploy
 ```
