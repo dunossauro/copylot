@@ -1,0 +1,47 @@
+name: Unit test
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    env:
+      DISPLAY: ':99.0'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+
+      - name: Config ci env
+        run: |
+          source ci_env.sh
+          install_ubuntu_image_dependencies
+          start_xvfb
+
+      - name: Install Poetry
+        uses: Gr1N/setup-poetry@v4
+
+      - name: Cache Poetry venv
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: ~/.virtualenvs
+          key: poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            poetry-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Config Poetry venv
+        run: |
+          poetry config virtualenvs.in-project false
+          poetry config virtualenvs.path ~/.virtualenvs
+
+      - name: Install dependencies
+        run: poetry install
+        if: steps.cache.outputs.cache-hit != 'true'
+
+      - name: Test execution
+        run: poetry run pytest

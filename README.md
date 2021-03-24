@@ -1,5 +1,5 @@
 # Copylot
-Your copilot to studies and work (Pomodoro-timer, Translate and Notes app) 
+Your copilot to studies and work (Pomodoro-timer, Translate and Notes app)
 
 
 Copylot are three applications in one:
@@ -20,7 +20,7 @@ Copilot is supported in:
 ### How to run this project?
 
 ```bash
-pip install poetry  # If you don't already have poetry 
+pip install poetry  # If you don't already have poetry
 poetry install
 poetry run main.py
 ```
@@ -44,4 +44,12 @@ If you want dolpy this app in your android phone you can use:
 
 ```bash
 poetry run buildozer deploy
+```
+
+### Run CI locally
+If you need to run CI to check something before commit you can use [act](https://github.com/nektos/act) locally
+
+After act installation run this command in project directory:
+```bash
+act
 ```
