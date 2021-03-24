@@ -8,12 +8,6 @@ jobs:
       DISPLAY: ':99.0'
     runs-on: ubuntu-latest
     steps:
-      - name: Config ci env
-        run: |
-          source ci_env.sh
-          install_ubuntu_image_dependencies
-          start_xvfb
-
       - name: Git Checkout
         uses: actions/checkout@v2
 
@@ -21,6 +15,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: "3.9"
+
+      - name: Config ci env
+        run: |
+          source ci_env.sh
+          install_ubuntu_image_dependencies
+          start_xvfb
 
       - name: Install Poetry
         uses: Gr1N/setup-poetry@v4
